@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<title>Gridonator Test</title>
+<style>
+	ul { margin:0; padding:0; list-style:none; /*width:1200px;*/ }
+	li { display:inline-block; min-width:200px; max-width:400px; /*width:300px;*/ }
+	p { margin:1em; }
+</style>
+</head>
+<body>
+	<ul id="grid">
+		<li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></li><li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></li><li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></li><li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></li><li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></li><li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></li>
+	</ul>
+	<script type="text/coffeescript" src="../src/Gridonator.coffee"></script>
+	<script type="text/coffeescript">
+	"use strict"
+
+#	class Gridonator
+#
+#		constructor: (@__container, @__containees) ->
+#		#	console.log @
+#		
+#		update: =>
+#			max_width = 400
+#			#min_width = 200
+#			#console.log "update"
+#			#console.log "Container width: #{@__container.clientWidth}"
+#			columns = Math.floor @__container.clientWidth / @__containees[0].clientWidth
+#			#console.log "Columns: #{columns}"
+#			width = @__container.clientWidth / columns
+#			#console.log "width: #{width}"
+#			columns++ if width > max_width
+#				#console.log "Too wide"
+#				
+#				#width = @__container.clientWidth / columns
+#				#console.log "width: #{width}"
+#			
+#			width = Math.floor @__container.clientWidth / columns
+#			#width = Math.floor width
+#			#console.log "Final width: #{width}"
+#			el.style.width = "#{width}px" for el in @__containees
+#			#total_width = width * columns
+#			#console.log "Total width = #{total_width}"
+#			
+
+	container = document.getElementById "grid"
+	containees = document.getElementsByTagName "li"
+
+	grid = new Gridonator container, containees, 400
+	grid.update()
+
+	window.onresize = grid.update
+	console.log grid
+		
+	</script>
+	<script src="http://coffeescript.org/extras/coffee-script.js"></script>
+</body>
+</html>
