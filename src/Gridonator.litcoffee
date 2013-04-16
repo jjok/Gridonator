@@ -16,4 +16,3 @@ Resize containee elements to share all the available space inside container.
 			columns++ if @__container.clientWidth / columns > @__max_width
 			width = Math.floor @__container.clientWidth / columns
 			el.style.width = "#{width}px" for el in @__containees
-			
