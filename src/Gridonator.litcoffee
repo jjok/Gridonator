@@ -1,7 +1,8 @@
 Gridonator
 ==========
-	
-* author Jonathan Jefferies (jjok)
+
+`coffee -c -o ./lib ./src`
+`uglifyjs -m -c -o ./lib/gridonator.min.js ./lib/Gridonator.js`
 
 	class @Gridonator
 
@@ -16,3 +17,5 @@ Resize containee elements to share all the available space inside container.
 			columns++ if @__container.clientWidth / columns > @__max_width
 			width = Math.floor @__container.clientWidth / columns
 			el.style.width = "#{width}px" for el in @__containees
+
+(c) Jonathan Jefferies (jjok)
